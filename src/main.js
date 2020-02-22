@@ -10,9 +10,13 @@ import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default.css'
 Vue.use(VueMaterial)
 
+import Vuetify from "vuetify"
+Vue.use(Vuetify)
+
 Vue.config.productionTip = false
 
 new Vue({
   render: h => h(App),
   router,
+  vuetify: new Vuetify()
 }).$mount('#app')
