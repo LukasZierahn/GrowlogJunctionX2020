@@ -22,33 +22,35 @@ export default {
   components: {
   },
 
-data () {
+  data () {
     return {
-      plants: [
-        new Plant(0, "Tomato"),
-        new Plant(1, "Tomato"),
-        new Plant(2, "Tomato"),
-        new Plant(3, "Tomato"),
-        new Plant(4, "Tomato"),
-        new Plant(5, "Tomato"),
-        new Plant(6, "Tomato"),
-        new Plant(7, "Tomato"),
-        new Plant(8, "Tomato"),
-        new Plant(9, "Tomato"),
-        new Plant(10, "Tomato"),
-        new Plant(11, "Tomato"),
-        new Plant(12, "Tomato"),
-        new Plant(13, "Tomato"),
-        new Plant(14, "Tomato"),
-        new Plant(15, "Tomato"),
-        new Plant(16, "Tomato"),
-        new Plant(17, "Tomato"),
-        new Plant(18, "Tomato"),
-        new Plant(19, "Tomato"),
-        new Plant(20, "Tomato")
-      ]
+      plants: []
     }
-  }
+  },
+
+  mounted() {
+    if (localStorage.plants !== undefined) {
+      for (let plant of localStorage.plants.split(";")) {
+        console.log(plant);
+        if (plant != "") {
+          this.plants.push(new Plant(plant));
+        }
+      }
+    } else {
+      this.plants.push(new Plant(0, "Tomato"))
+      this.plants.push(new Plant(1, "Tomato"))
+      this.plants.push(new Plant(2, "Tomato"))
+      this.plants.push(new Plant(3, "Tomato"))
+
+      let output = ""
+      for (let plant of this.plants) {
+        output += plant.toSafeString();
+      }
+
+      localStorage.plants = output;
+    }
+  },
+
 }
 </script>
 <style>

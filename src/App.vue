@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <div id="bottom">
-
       <Navigation v-if="$route.name != 'Plant'"></Navigation>
       <Back v-else></Back>
     </div>
