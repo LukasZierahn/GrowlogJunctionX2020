@@ -24,4 +24,9 @@ export default class Plant {
     toSafeString() {
         return this.id + "," + this.name + "," + this.progress + "," + this.nextWaterNeed.getTime() + ";";
     }
+
+    Water() {
+        console.log("click");
+        this.nextWaterNeed = new Date((new Date()).getTime() + 36*3600*1000)    
+    }
 }

@@ -7,7 +7,9 @@
       </div>
       <md-progress-bar class="md-accent" md-mode="determinate" :md-value="plant.progress * 100" :height="50"/>
     </div>
-    <h2>Next Water needed in {{plant.nextWaterNeed - (new Date())}} Milliseconds</h2>
+    <div v-on:click="plant.Water()">
+      <h2>Next Water needed in {{timeLeft}} Milliseconds</h2>
+    </div>
   </div>
 </template>
 
@@ -16,8 +18,34 @@
 
 export default {
   name: 'Contact',
+  data() {
+    return {
+      timeLeft: 0,
+      killTimeout: false
+    }
+  },
 
   props : ["plant"],
+
+  methods: {
+    countDownTimer() {
+      setTimeout(() => {
+        this.timeLeft = this.plant.nextWaterNeed - (new Date());
+        if (!this.killTimeout) {
+          this.countDownTimer()
+        }
+      }, 1000);
+    }
+  },
+
+  beforeDestroy() {
+    this.killTimeout = true;
+  },
+
+  mounted() {
+    this.killTimeout = false;
+    this.countDownTimer()
+  }
 
 }
 </script>

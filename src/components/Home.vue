@@ -31,7 +31,6 @@ export default {
   mounted() {
     if (localStorage.plants !== undefined) {
       for (let plant of localStorage.plants.split(";")) {
-        console.log(plant);
         if (plant != "") {
           this.plants.push(new Plant(plant));
         }
