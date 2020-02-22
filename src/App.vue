@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <div id="bottom">
-      <Navigation></Navigation>
+
+      <Navigation v-if="$route.name != 'Plant'"></Navigation>
+      <Back v-else></Back>
     </div>
     <div id="top">
       <router-view/>
@@ -11,10 +13,13 @@
 
 <script>
 import Navigation from './components/Navigation'
+import Back from './components/Back'
+
 export default {
   name: 'App',
   components: {
-    Navigation
+    Navigation,
+    Back
   }
 }
 </script>
