@@ -1,23 +1,19 @@
 <template>
   <div id="home">
-    <h1>Home</h1>
-    <RecycleScroller
-      class="scroller"
-      :items="plants"
-      :item-size="50"
-      key-field="id"
-      v-slot="{ item }"
-    >     
-      <div class="user">
-        {{ item.name }}
-        <md-progress-bar class="md-accent" md-mode="determinate" :md-value="item.progress * 100" :height="20"/>
+    <h1>Plants</h1>
+    <div class="d-flex flex-column">
+      <div v-for="item in plants" :key="item.id">
+        <div class="d-flex flex-row" style="height : 50px;">
+          <div class="flowRowText">{{ item.name }}</div>
+          <div class="flowRowImage"> <img :src="item.picture" height="50px" width="50px"></div>
+        </div>
+          <md-progress-bar class="md-accent" md-mode="determinate" :md-value="item.progress * 100" :height="20"/>
       </div>
-    </RecycleScroller>
+    </div>
   </div>
 </template>
 
 <script>
-
 import Plant from "./../helper/Plant";
 
 export default {
@@ -62,8 +58,28 @@ data () {
   overflow-y: 0;
 }
 
-.user {
+.flowRowText {
+  position: absolute;
+  left: 75px;
+}
+
+.flowRowImage {
+  position: absolute;
+  left: 25px;
+}
+
+.itemTop {
   width: 100%;
+}
+
+.itemPicture {
+  height: "50px";
+  width: "50px";
+}
+
+.item {
+  width: 100%;
+  display: block;
 }
 
 </style>
