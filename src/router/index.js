@@ -5,6 +5,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Home from '@/components/Home'
 import About from '@/components/About'
 import Contact from '@/components/Contact'
+import Plant from "@/components/Plant"
 
 Vue.use(Router)
 
@@ -29,6 +30,12 @@ export default new Router({
       path: '/contact',
       name: 'Contact',
       component: Contact
+    },
+    {
+      path: '/plant/:plant',
+      name: 'Plant',
+      props: true,
+      component: Plant
     }
   ]
 })
