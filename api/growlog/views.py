@@ -4,14 +4,31 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 
-from .models import Project
+from .models import Project, Temperature
+
+temperature = 0
 
 @csrf_exempt
 def smart(request):
-    print(request.POST)
-    print(request.GET)
+    global temperature
+    # print(request.POST)
+    # print(request.GET)
+    try:
+        temperature = request.POST["temp"][:-1]
+        temperature = int(request.POST["temp"][:-1])
+    except ValueError:
+        print(temperature)
+        pass
+
+    print(temperature)
     return HttpResponse(status=200)
     # return render(request, "growlog/smart.html")
+
+def read_smart(request):
+    global temperature
+    print(f"Returned {temperature}")
+    return JsonResponse({"temp": temperature})
+
 
 @csrf_exempt
 def projects(request):
@@ -52,5 +69,5 @@ def project_create(request):
         new_project.save()
     except MultiValueDictKeyError:
         return HttpResponse(status=400)
-        
+
     return HttpResponse(status=200)

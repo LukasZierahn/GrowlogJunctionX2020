@@ -3,15 +3,15 @@
     <h1>Add Project</h1>
     <div class="div1">
         <h2 class="nameHead">Name</h2>
-        <input class= "text" type="text"/> <br>
+        <input class= "text" type="text" v-model="projectName"/> <br>
         <h2 class="typeHead">Type</h2>
-        <select class ="select" id="type" name="type" multiple>
+        <select class ="select" id="type" v-model="projectType" name="type" multiple>
             <option value ="Pot">Pot</option>
             <option value="Planter">Planter</option>
             <option value="Vertical Garden">Vertical Garden</option>
         </select><br>
     </div><br>
-<div class="div2"><img src="../assets/button.png"/></div>
+    <div class="div2" @click="addProject"><img src="../assets/button.png"/></div>
 </div>
 </template>
 

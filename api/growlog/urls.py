@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
     path('smart/', views.smart),
+    path('smartread/', views.read_smart),
     path('login/', views.login_view),
 
     path('project/<int:id>', views.project_get),

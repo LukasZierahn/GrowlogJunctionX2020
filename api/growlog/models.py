@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+class Temperature(models.Model):
+    temperature = models.FloatField()
+
 class Project(models.Model):
     title = models.CharField(max_length=128)
     project_type = models.CharField(max_length=64)

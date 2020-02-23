@@ -3,7 +3,13 @@ export default class Data {
         if (localStorage.projects === undefined) {
             return [];
         } else {
-            return JSON.parse(localStorage.projects);
+            var list = JSON.parse(localStorage.projects);
+
+            for (var i = 0; i < list.length; i++) {
+                list[i].id = i;
+            }
+
+            return list;
         }
     }
     
