@@ -3,11 +3,15 @@
     <h1>Add Project</h1>
     <div class="div1">
         <h2>Name</h2>
-        <input type="text" placeholder="Project Name" />
+        <input type="text" placeholder="Project Name"/> <br>
         <h2>Type</h2>
-        <input type="text" placeholder="Project Type" />
-    </div>
-        <br><button type="button">Login with Facebook</button>
+        <ul style="list-style-type:none;">
+            <li>Pot</li>
+            <li>Planter</li>
+            <li> Vertical Garden</li>
+        </ul>
+    </div><br>
+        <button type="button">Done</button>
 </div>
 </template>
 
@@ -22,8 +26,12 @@ name: 'newProject'
     margin: auto;
     padding: 10px;
     width: 300px;
-    height: 100 px;
-    border: 2px solid black
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 25px
+}
+.button{
+
 }
 </style>
 
