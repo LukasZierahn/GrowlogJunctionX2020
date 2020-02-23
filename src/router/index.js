@@ -30,6 +30,7 @@ export default new Router({
     {
       path: '/project/:id',
       name: 'Project',
+      props: true,
       component: ProjectView
     },
     {

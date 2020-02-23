@@ -1,7 +1,7 @@
 <template>
   <div class="home-background">
     
-    <h1 class ="title">    Your Projects</h1>
+    <h1 class="title">Your Projects</h1>
 
     <div class="d-flex flex-column" style="position:fixed; background: white; border-radius:25px; width:80%; left:5%; box-shadow: 4px 2px 12px 3px rgba(0,0,0,0.27);">
       <div v-for="project in projects" :key="project.id">
@@ -9,7 +9,8 @@
           <ProjectItem :project="project"></ProjectItem>
         </div>
       </div>
-          <router-link class="button" to="NewProject"><div class="button"><img src = "../assets/button.png"/></div></router-link>
+      
+      <router-link class="button" to="new-project"><div class="button"><img src = "../assets/button.png"/></div></router-link>
     </div>
 
   </div>

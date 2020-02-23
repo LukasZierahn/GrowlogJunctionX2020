@@ -18,9 +18,10 @@ export default {
     components: {
         PlantList
     },
+    props: ["id"],
     data() {
         return {
-            id: this.$route.params.id,
+            // id: this.$route.params.id,
             project: null
         }
     },
