@@ -4,7 +4,7 @@ import Router from 'vue-router'
 import Home from '@/views/Home'
 import Plant from "@/views/Plant"
 import Login from "@/views/Login"
-import NewProject from "@/views/NewProject"
+import NewProject from "@/views/newProject"
 import ProjectView from "@/views/ProjectView"
 import Smart from "@/views/Smart"
 
