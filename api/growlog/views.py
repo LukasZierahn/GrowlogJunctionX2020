@@ -4,6 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate, login
 
 from .models import Project
+from .models import User
 
 
 @csrf_exempt
