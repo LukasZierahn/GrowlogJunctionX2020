@@ -1,22 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import HelloWorld from '@/components/HelloWorld'
-import Home from '@/components/Home'
-import PlantList from '@/components/PlantList'
-import About from '@/components/About'
-import Contact from '@/components/Contact'
-import Plant from "@/components/Plant"
+import Home from '@/views/Home'
+import PlantList from '@/views/PlantList'
+import About from '@/views/About'
+import Contact from '@/views/Contact'
+import Plant from "@/views/Plant"
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
     {
       path: '/plantList',
       name: 'PlantList',
