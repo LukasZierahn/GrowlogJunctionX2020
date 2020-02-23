@@ -1,15 +1,15 @@
 <template>
   <div class="home-background">
     
-    <h1>Your Projects</h1>
+    <h1 class ="title">    Your Projects</h1>
 
-    <div class="d-flex flex-column">
+    <div class="d-flex flex-column" style="position:fixed; background: white; border-radius:25px; width:80%; left:5%; box-shadow: 4px 2px 12px 3px rgba(0,0,0,0.27);">
       <div v-for="project in projects" :key="project.id">
-        <div class="d-flex flex-row">
+        <div class="d-flex flex-row" style="position:relative; background: white; color:black; width:90%; left:5%">
           <ProjectItem :project="project"></ProjectItem>
         </div>
       </div>
-          <router-link class="button" to="newProject.vue"><button>Add Project</button></router-link>
+          <router-link class="button" to="newProject"><div class="button"><img src = "../assets/button.png"/></div></router-link>
     </div>
 
   </div>
@@ -81,7 +81,8 @@ h1 {
   min-width: 100vw;
   min-height: 100vh;
   background: rgb(255,146,156);
-  background: linear-gradient(332deg, rgba(255,146,156,1) 0%, rgba(247,211,198,1) 100%); 
+  background: linear-gradient(332deg, rgba(247,211,198,1) 0%, rgba(255,146,156,1)  100%); 
+  
 }
 
 .flowRowText {
@@ -109,6 +110,17 @@ h1 {
 }
 
 .button {
+  position: relative;
+  top:25px;
+  left:7.25%;
+  width:75%;
+  height:20%;
   border-radius: 12px;
+  background: white;
+  box-shadow: 4px 2px 12px 3px rgba(0,0,0,0.27);
+}
+
+.title {
+  color:white; text-align:left; left:15%; padding-left:10%
 }
 </style>
