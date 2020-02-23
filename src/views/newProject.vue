@@ -1,16 +1,18 @@
 <template>
-    <div id="newProject">
-        <h1>Add Project</h1>
-
-        <div class="div1">
-            <h2 class="nameHead">Name</h2>
-            <input name="project-name" type="text" placeholder="Project Name" v-model="projectName" />
-            <h2 class="typeHead">Type</h2>
-            <input name="project-type" type="text" placeholder="Project Type" v-model="projectType" />
-        </div>
-
-        <button type="button" @click="addProject()">Add Project</button>
-    </div>
+  <div class="newProject">
+    <h1>Add Project</h1>
+    <div class="div1">
+        <h2 class="nameHead">Name</h2>
+        <input class= "text" type="text"/> <br>
+        <h2 class="typeHead">Type</h2>
+        <select class ="select" id="type" name="type" multiple>
+            <option value ="Pot">Pot</option>
+            <option value="Planter">Planter</option>
+            <option value="Vertical Garden">Vertical Garden</option>
+        </select><br>
+    </div><br>
+<div class="div2"><img src="../assets/button.png"/></div>
+</div>
 </template>
 
 <script>
@@ -45,6 +47,7 @@ export default {
 .nameHead{
     text-align: left;
     padding-left: 20px;
+    height: 13px;
 }
 .typeHead{
     text-align: left;
@@ -57,9 +60,21 @@ export default {
     margin: auto;
     padding: 10px;
     width: 300px;
-    height: 200px;
-    border: 2px solid black;
+    height: 260px;
+    border: 2px solid grey;
     border-radius: 25px;
+    background-color: white;
+}
+.div2{
+  position: relative;
+  margin-left: 135px;
+  top:25px;
+  left:7.25%;
+  width:50%;
+  height:20%;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 4px 2px 12px 3px rgba(0,0,0,0.27);
 }
 .newProject{
     min-width: 100vw;
@@ -69,8 +84,12 @@ export default {
 }
 .text{
     border-radius: 25px;
-    border: 2px solid black;
+    border: 2px solid grey;
     width: 240px;
+}
+.select{
+    width: 227px;
+    font-size: 15px;
 }
 </style>
 
