@@ -15,6 +15,10 @@ Vue.use(Vuetify)
 
 Vue.config.productionTip = false
 
+import { BModal, BButton } from 'bootstrap-vue'
+Vue.component('b-modal', BModal)
+Vue.component('b-button', BButton)
+
 new Vue({
   render: h => h(App),
   router,

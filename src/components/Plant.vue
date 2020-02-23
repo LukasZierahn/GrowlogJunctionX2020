@@ -8,7 +8,13 @@
       <md-progress-bar class="md-accent" md-mode="determinate" :md-value="plant.progress * 100" :height="50"/>
     </div>
     <div v-on:click="plant.Water()">
-      <h2>Next Water needed in {{timeLeft}} Milliseconds</h2>
+      <h2>Next Water needed in {{Math.floor(timeLeft / (1000 * 60 * 60 * 24))}} Days and {{Math.floor(timeLeft / (1000 * 60 * 60)) % 24}} Hours</h2>
+    </div>
+    <div>
+  <b-button v-b-modal="'my-modal'">Show Modal</b-button>
+
+  <!-- The modal -->
+  <b-modal id="my-modal">Hello From My Modal!</b-modal>
     </div>
   </div>
 </template>
@@ -21,7 +27,8 @@ export default {
   data() {
     return {
       timeLeft: 0,
-      killTimeout: false
+      killTimeout: false,
+      modalShow: true
     }
   },
 
