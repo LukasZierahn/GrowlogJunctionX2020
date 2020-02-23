@@ -1,7 +1,7 @@
 
 <template>
   <div id="Login">
-    <img src="@/assets/tomato.jpg">
+    <img src="@/assets/logo.png">
     <h2>Growlog</h2>
     <input type="text" name="username" v-model="input.username" placeholder="Username" /><br>
     <input type="password" name="password" v-model="input.password" placeholder="Password" /><br>
