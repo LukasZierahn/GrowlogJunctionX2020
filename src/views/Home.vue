@@ -9,7 +9,7 @@
           <ProjectItem :project="project"></ProjectItem>
         </div>
       </div>
-          <router-link class="button" to="newProject"><button>Add Project</button></router-link>
+          <router-link class="button" to="new-project"><button>Add Project</button></router-link>
     </div>
 
   </div>

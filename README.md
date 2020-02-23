@@ -1,4 +1,4 @@
-# healthx
+# Growlog
 
 ## Project setup
 ```
