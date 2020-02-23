@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Home from '@/views/Home'
-import PlantList from '@/views/PlantList'
+import PlantList from '@/components/PlantList'
+
+import YourProjects from '@/views/YourProjects'
 import About from '@/views/About'
 import Contact from '@/views/Contact'
 import Plant from "@/views/Plant"
@@ -17,9 +18,9 @@ export default new Router({
       component: PlantList
     },
     {
-      path: '/home',
-      name: 'Home',
-      component: Home
+      path: '/your-projects',
+      name: 'YourProjects',
+      component: YourProjects
     },
     {
       path: '/about',
