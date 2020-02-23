@@ -1,14 +1,14 @@
 <template>
-  <div class="project">
-    <div class="project-name">{{ project.name }}
+  <router-link :to="{ name: 'Project', params: { project: project } }">
+    <div class="project">
+      <div class="project-name">{{ project.name }}</div>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
 export default {
   name: 'Project', //this is the name of the component
-
   props: ["project"]
 }
 </script>
@@ -21,6 +21,6 @@ export default {
 }
 
 .project-name {
-
+  color: white;
 }
 </style>

@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Home from '@/views/Home'
 import Plant from "@/views/Plant"
 import Login from "@/views/Login"
+import ProjectView from "@/views/ProjectView"
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
       name: 'Plant',
       props: true,
       component: Plant
+    },
+    {
+      path: '/project/:project',
+      name: 'Project',
+      component: ProjectView
     }
   ]
 })
