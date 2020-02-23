@@ -10,12 +10,6 @@
     <div v-on:click="plant.Water()">
       <h2>Next Water needed in {{Math.floor(timeLeft / (1000 * 60 * 60 * 24))}} Days and {{Math.floor(timeLeft / (1000 * 60 * 60)) % 24}} Hours</h2>
     </div>
-    <div>
-  <b-button v-b-modal="'my-modal'">Show Modal</b-button>
-
-  <!-- The modal -->
-  <b-modal id="my-modal">Hello From My Modal!</b-modal>
-    </div>
   </div>
 </template>
 

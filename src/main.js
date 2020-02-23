@@ -15,9 +15,9 @@ Vue.use(Vuetify)
 
 Vue.config.productionTip = false
 
-import { BModal, BButton } from 'bootstrap-vue'
-Vue.component('b-modal', BModal)
-Vue.component('b-button', BButton)
+import axios from 'axios'
+
+Vue.prototype.$http = axios
 
 new Vue({
   render: h => h(App),

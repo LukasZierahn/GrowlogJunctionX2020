@@ -25,10 +25,12 @@ export default {
   methods: {
     async login() {
       if (this.input.username != "" && this.input.password != "") {
+
         // let response = await axios.get(`https://google.com?usr=${this.input.username}&pw=${this.input.password}`);
         let response = {status: 200};
 
         if (response.status == 200) {
+          this.$http.defaults.headers.common['Auth-Token'] = 'foo bar';
           this.$router.replace({ name: "Home" });
         } else {
           console.log("The username and / or password is incorrect");
