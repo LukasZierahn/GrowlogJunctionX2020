@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        {{ project.name }}
-        <p></p>
+        <p>{{project.name}}</p>
+        <PlantList :project="project"></PlantList>
     </div>
 </template>
 
@@ -9,8 +9,17 @@
 </style>
 
 <script>
+import PlantList from "../components/PlantList";
+
 export default {
     name: 'ProjectView', //this is the name of the component
-    props: ["project"]
+    components: {
+        PlantList
+    },
+    data() {
+        return {
+            project: this.$route.params.project
+        }
+    }
 }
 </script>
