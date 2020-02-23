@@ -1,20 +1,19 @@
 <template>
   <div class="newProject">
-      <img src=""
     <h1>Add Project</h1>
     <div class="div1">
         <h2 class="nameHead">Name</h2>
         <input class= "text" type="text"/> <br>
         <h2 class="typeHead">Type</h2>
-            <div id="wrapper">
-                <ul>
-                    <li>Pot</li>
-                    <li>Planter</li>
-                    <li> Vertical Garden</li>
-                </ul>
-            </div>
+      <form action="/action_page.php">
+<select class="select" id="type" name="cars" multiple>
+  <option value="volvo">Pot</option>
+  <option value="saab">Planter</option>
+  <option value="opel">Vertical Garden</option>
+</select><br>
+</form>  
     </div><br>
-<div class=div2></div>
+<div class="div2"><img src="../assets/button.png"/></div>
 </div>
 </template>
 
@@ -28,6 +27,7 @@ name: 'newProject'
 .nameHead{
     text-align: left;
     padding-left: 20px;
+    height: 13px;
 }
 .typeHead{
     text-align: left;
@@ -40,9 +40,21 @@ name: 'newProject'
     margin: auto;
     padding: 10px;
     width: 300px;
-    height: 200px;
-    border: 2px solid black;
+    height: 260px;
+    border: 2px solid grey;
     border-radius: 25px;
+    background-color: white;
+}
+.div2{
+  position: relative;
+  margin-left: 135px;
+  top:25px;
+  left:7.25%;
+  width:50%;
+  height:20%;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 4px 2px 12px 3px rgba(0,0,0,0.27);
 }
 .newProject{
     min-width: 100vw;
@@ -52,8 +64,12 @@ name: 'newProject'
 }
 .text{
     border-radius: 25px;
-    border: 2px solid black;
+    border: 2px solid grey;
     width: 240px;
+}
+.select{
+    width: 227px;
+    font-size: 15px;
 }
 </style>
 
