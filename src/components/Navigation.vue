@@ -1,6 +1,6 @@
 <template>
   <div class="navbar">
-    <md-bottom-bar mdType="center">
+    <md-bottom-bar mdType="fixed">
       <md-bottom-bar-item to="/social" md-label="Social"><img src="../assets/people.png"/></md-bottom-bar-item>
       <md-bottom-bar-item to="/learn" md-label="Learn"><img src="../assets/book.png"/></md-bottom-bar-item>
       <md-bottom-bar-item to="/home" md-label="Home"><img src="../assets/plant.png"></md-bottom-bar-item>
@@ -29,9 +29,7 @@ export default {
                         height:auto;
                         display:inline; 
             }
-.md-bottom-bar *{
-  display:inline;
-}
+
 .navbar{color:white;
 opacity: 1.0;
 background-color: white;
