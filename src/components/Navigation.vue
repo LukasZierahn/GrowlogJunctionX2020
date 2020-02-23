@@ -19,6 +19,29 @@ export default {
 </script>
 
 <style>
+.gfg { 
+                width:auto; 
+                text-align:center; 
+                padding:20px; 
+            } 
+            img { 
+                max-width:100%; 
+                        height:auto;
+                        display:inline; 
+            }
+.md-bottom-bar *{
+  display:inline;
+}
+.navbar{color:white;
+opacity: 1.0;
+background-color: white;
+border-top-right-radius: 25px;
+border-top-left-radius: 25px;
+white-space: nowrap;}
+
+.navbar *{
+  display: inline;
+}
 </style>
 
 
