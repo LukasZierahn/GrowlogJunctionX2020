@@ -1,7 +1,7 @@
 .navbar {
   position: fixed;
   display: -ms-flexbox;
-  display: flex;
+  display: inline-flex;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   -ms-flex-align: center;
