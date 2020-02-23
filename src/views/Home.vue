@@ -1,9 +1,9 @@
 <template>
   <div class="home-background">
+    
+    <h1>Your Projects</h1>
 
     <div class="d-flex flex-column">
-      <h1>Your Projects</h1>
-
       <div v-for="project in projects" :key="project.id">
         <div class="d-flex flex-row">
           <ProjectItem :project="project"></ProjectItem>
