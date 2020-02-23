@@ -9,6 +9,7 @@
           <ProjectItem :project="project"></ProjectItem>
         </div>
       </div>
+          <router-link class="button" to="newProject"><button>Add Project</button></router-link>
     </div>
 
   </div>
@@ -28,6 +29,10 @@ export default {
   // },
   components: {
     ProjectItem
+  },
+
+  add () {
+    this.project.push;
   },
 
   data () {
@@ -103,4 +108,7 @@ h1 {
   display: block;
 }
 
+.button {
+  border-radius: 12px;
+}
 </style>

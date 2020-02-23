@@ -1,7 +1,7 @@
 <template>
   <div class="project">
-    <div class="project-name">{{ project.name }}</div>
-
+    <div class="project-name">{{ project.name }}
+    </div>
   </div>
 </template>
 
