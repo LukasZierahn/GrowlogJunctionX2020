@@ -1,7 +1,8 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 
 class Project(models.Model):
+    user = models.ForeignKey("User", on_delete=models.CASCADE)
     title = models.CharField(max_length=128)
     project_pack = models.CharField(max_length=400)
     smart = models.BooleanField()
