@@ -9,7 +9,7 @@
           <ProjectItem :project="project"></ProjectItem>
         </div>
       </div>
-          <router-link class="button" to="newProject.vue"><button>Add Project</button></router-link>
+          <router-link class="button" to="newProject"><button>Add Project</button></router-link>
     </div>
 
   </div>
@@ -31,9 +31,6 @@ export default {
     ProjectItem
   },
 
-  add () {
-    this.project.push;
-  },
 
   data () {
     return {
