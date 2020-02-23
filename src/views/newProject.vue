@@ -30,8 +30,5 @@ name: 'newProject'
     border: 2px solid black;
     border-radius: 25px
 }
-.button{
-
-}
 </style>
 
