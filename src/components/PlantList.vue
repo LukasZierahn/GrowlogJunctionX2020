@@ -8,6 +8,8 @@
         </div>
         <md-progress-bar class="md-accent" md-mode="determinate" :md-value="item.progress * 100" :height="20"/>
       </router-link>
+
+      <div class="btn btn-lg">Add</div>
     </div>
   </div>
 </template>

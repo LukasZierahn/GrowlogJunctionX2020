@@ -1,16 +1,15 @@
 <template>
-  <div class="home-background">
-
+  <div id="home" class="home-background">
+    <h1>Your Projects</h1>
+    
     <div class="d-flex flex-column">
-      <h1>Your Projects</h1>
-
       <div v-for="project in projects" :key="project.id">
         <div class="d-flex flex-row">
           <ProjectItem :project="project"></ProjectItem>
+          <!-- <PlantList :project="project"></PlantList> -->
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -59,11 +58,6 @@ export default {
 }
 </script>
 <style>
-h1 {
-  margin-top: 0;
-  padding-top: 40px;
-}
-
 #home {
   height: 50% !important;
   max-height: 50% !important;
