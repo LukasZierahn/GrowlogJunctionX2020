@@ -16,7 +16,7 @@
 
 <script>
 import Project from "./../helper/Project";
-import PlantList from "./PlantList";
+import PlantList from "../components/PlantList";
 
 export default {
   name: 'Home', //this is the name of the component
