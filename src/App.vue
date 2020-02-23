@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div id="bottom">
-      <Navigation v-if="$route.name != 'Plant'"></Navigation>
-      <Back v-else></Back>
+      <Back v-if="$route.name == 'Plant'"></Back>
+      <Navigation v-else-if="$route.name != 'Login'"></Navigation>
     </div>
     <div id="top">
       <router-view/>
