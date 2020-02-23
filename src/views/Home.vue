@@ -9,7 +9,7 @@
           <ProjectItem :project="project"></ProjectItem>
         </div>
       </div>
-          <router-link class="button" to="newProject"><div class="button"><img src = "../assets/button.png"/></div></router-link>
+          <router-link class="button" to="NewProject"><div class="button"><img src = "../assets/button.png"/></div></router-link>
     </div>
 
   </div>
