@@ -20,24 +20,27 @@ export default {
 
 <style>
 .gfg { 
-                width:auto; 
-                text-align:center; 
-                padding:20px; 
-            } 
-            img { 
-                max-width:100%; 
-                        height:auto;
-                        display:inline; 
-            }
+  width:auto; 
+  text-align:center; 
+  padding:20px; 
+}
 
-.navbar{color:white;
-opacity: 1.0;
-background-color: white;
-border-top-right-radius: 25px;
-border-top-left-radius: 25px;
-white-space: nowrap;}
+img { 
+  max-width:100%; 
+  height:auto;
+  display:inline; 
+}
 
-.navbar *{
+.navbar{
+  color:white;
+  opacity: 1.0;
+  background-color: white;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  white-space: nowrap;
+}
+
+.navbar * {
   display: inline;
 }
 </style>
