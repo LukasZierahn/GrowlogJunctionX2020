@@ -1,5 +1,5 @@
 <template>
-  <div id="newProject">
+  <div class="newProject">
     <h1>Add Project</h1>
     <div class="div1">
         <h2>Name</h2>
@@ -11,7 +11,7 @@
             <li> Vertical Garden</li>
         </ul>
     </div><br>
-        <button type="button">Done</button>
+<div class=div2></div>
 </div>
 </template>
 
@@ -29,6 +29,15 @@ name: 'newProject'
     height: 200px;
     border: 2px solid black;
     border-radius: 25px
+}
+.newProject{
+    min-width: 100vw;
+    min-height: 100vh;
+    background: rgb(255,146,156);
+    background: linear-gradient(332deg, rgba(255,146,156,1) 0%, rgba(247,211,198,1) 100%); 
+}
+.div2{
+
 }
 </style>
 
