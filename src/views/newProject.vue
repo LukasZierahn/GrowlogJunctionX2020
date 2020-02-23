@@ -3,9 +3,9 @@
         <h1>Add Project</h1>
 
         <div class="div1">
-            <h2>Name</h2>
+            <h2 class="nameHead">Name</h2>
             <input name="project-name" type="text" placeholder="Project Name" v-model="projectName" />
-            <h2>Type</h2>
+            <h2 class="typeHead">Type</h2>
             <input name="project-type" type="text" placeholder="Project Type" v-model="projectType" />
         </div>
 
@@ -42,12 +42,35 @@ export default {
 </script>
 
 <style>
+.nameHead{
+    text-align: left;
+    padding-left: 20px;
+}
+.typeHead{
+    text-align: left;
+    padding-left: 20px;
+}
+.listType{
+    text-align: left;
+}
 .div1{
     margin: auto;
     padding: 10px;
     width: 300px;
-    height: 100 px;
-    border: 2px solid black
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+.newProject{
+    min-width: 100vw;
+    min-height: 100vh;
+    background: rgb(255,146,156);
+    background: linear-gradient(332deg, rgba(255,146,156,1) 0%, rgba(247,211,198,1) 100%); 
+}
+.text{
+    border-radius: 25px;
+    border: 2px solid black;
+    width: 240px;
 }
 </style>
 
