@@ -10,6 +10,8 @@
 
 <script>
 import PlantList from "../components/PlantList";
+// const axios = require("axios");
+import Data from "../helper/Data";
 
 export default {
     name: 'ProjectView', //this is the name of the component
@@ -18,8 +20,18 @@ export default {
     },
     data() {
         return {
-            project: this.$route.params.project
+            id: this.$route.params.id,
+            project: null
         }
-    }
+    },
+    mounted() {
+        this.project = Data.getProject(this.id);
+
+        // axios
+        //     .get("http://192.168.88.114:8000/api/project/" + this.id)
+        //     .then(response => {
+        //         this.project = JSON.parse(response);
+        //     });
+    },
 }
 </script>

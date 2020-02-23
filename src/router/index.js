@@ -28,7 +28,7 @@ export default new Router({
       component: Plant
     },
     {
-      path: '/project/:project',
+      path: '/project/:id',
       name: 'Project',
       component: ProjectView
     },

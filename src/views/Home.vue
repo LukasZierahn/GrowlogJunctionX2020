@@ -9,28 +9,24 @@
           <ProjectItem :project="project"></ProjectItem>
         </div>
       </div>
-          <router-link class="button" to="newProject"><div class="button"><img src = "../assets/button.png"/></div></router-link>
+          <router-link class="button" to="NewProject"><div class="button"><img src = "../assets/button.png"/></div></router-link>
     </div>
 
   </div>
 </template>
 
 <script>
-import Project from "./../helper/Project";
+// import Project from "./../helper/Project";
 import ProjectItem from "../components/ProjectItem";
+import Data from "../helper/Data";
 // import PlantList from "../components/PlantList";
 
 export default {
   name: 'Home', //this is the name of the component
 
-  // components: {
-  //   PlantList,
-  //   ProjectItem
-  // },
   components: {
     ProjectItem
   },
-
 
   data () {
     return {
@@ -39,25 +35,26 @@ export default {
   },
 
   mounted() {
-    console.log(this.$http.defaults.headers.common['Auth-Token']);
+    this.projects = Data.getAllProjects();
+    // console.log(this.$http.defaults.headers.common['Auth-Token']);
 
-    if (localStorage.projects !== undefined) {
-      for (let project of localStorage.projects.split("*")) {
-        if (project != "") {
-          this.projects.push(new Project(project));
-        }
-      }
-    } else {
-      this.projects.push(new Project(0, "My Planter"))
-      this.projects.push(new Project(1, "My Pot"))
+    // if (localStorage.projects !== undefined) {
+    //   for (let project of localStorage.projects.split("*")) {
+    //     if (project != "") {
+    //       this.projects.push(new Project(project));
+    //     }
+    //   }
+    // } else {
+    //   this.projects.push(new Project(0, "My Planter"))
+    //   this.projects.push(new Project(1, "My Pot"))
 
-      let output = ""
-      for (let project of this.projects) {
-        output += project.toSafeString();
-      }
+    //   let output = ""
+    //   for (let project of this.projects) {
+    //     output += project.toSafeString();
+    //   }
 
-      localStorage.projects = output;
-    }
+    //   localStorage.projects = output;
+    // }
   },
 
 }

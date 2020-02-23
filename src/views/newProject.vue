@@ -5,21 +5,41 @@
         <h2 class="nameHead">Name</h2>
         <input class= "text" type="text"/> <br>
         <h2 class="typeHead">Type</h2>
-      <form action="/action_page.php">
-<select class="select" id="type" name="cars" multiple>
-  <option value="volvo">Pot</option>
-  <option value="saab">Planter</option>
-  <option value="opel">Vertical Garden</option>
-</select><br>
-</form>  
+        <select class ="select" id="type" name="type" multiple>
+            <option value ="Pot">Pot</option>
+            <option value="Planter">Planter</option>
+            <option value="Vertical Garden">Vertical Garden</option>
+        </select><br>
     </div><br>
 <div class="div2"><img src="../assets/button.png"/></div>
 </div>
 </template>
 
 <script>
+// const axios = require("axios");
+import Data from "../helper/Data";
+
 export default {
-name: 'newProject'
+    name: 'NewProject',
+    data() {
+        return {
+            projectName: "",
+            projectType: "",
+        }
+    },
+    methods: {
+        addProject() {
+            Data.addProject({
+                name: this.projectName,
+                type: this.projectType
+            });
+            var projects = Data.getAllProjects();
+            this.closeView(projects.length - 1);
+        },
+        closeView(projectId) {
+            this.$router.push({ name: "Project", params: { id: projectId } });
+        },
+    },
 }
 </script>
 
