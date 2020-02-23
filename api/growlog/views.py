@@ -24,10 +24,13 @@ def smart(request):
     return HttpResponse(status=200)
     # return render(request, "growlog/smart.html")
 
+@csrf_exempt
 def read_smart(request):
     global temperature
     print(f"Returned {temperature}")
-    return JsonResponse({"temp": temperature})
+    response = JsonResponse({"temp": temperature})
+    response.__setitem__('Access-Control-Allow-Origin', '*')
+    return response
 
 
 @csrf_exempt

@@ -6,6 +6,7 @@ import Plant from "@/views/Plant"
 import Login from "@/views/Login"
 import NewProject from "@/views/NewProject"
 import ProjectView from "@/views/ProjectView"
+import Smart from "@/views/Smart"
 
 Vue.use(Router)
 
@@ -15,6 +16,11 @@ export default new Router({
       path: '/home',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/smart',
+      name: 'Smart',
+      component: Smart
     },
     {
       path:"/",
