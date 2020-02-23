@@ -37,6 +37,8 @@ export default {
   },
 
   mounted() {
+    console.log(this.$http.defaults.headers.common['Auth-Token']);
+
     if (localStorage.projects !== undefined) {
       for (let project of localStorage.projects.split("*")) {
         if (project != "") {
