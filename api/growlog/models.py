@@ -3,8 +3,9 @@ from django.contrib.auth.models import User
 
 class Project(models.Model):
     title = models.CharField(max_length=128)
-    project_pack = models.CharField(max_length=400)
-    smart = models.BooleanField()
+    project_type = models.CharField(max_length=64)
+    project_pack = models.CharField(max_length=400, null=True)
+    smart = models.BooleanField(default=False)
 
 
 class Plant(models.Model):

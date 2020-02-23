@@ -1,19 +1,43 @@
 <template>
-  <div id="newProject">
-    <h1>Add Project</h1>
-    <div class="div1">
-        <h2>Name</h2>
-        <input type="text" placeholder="Project Name" />
-        <h2>Type</h2>
-        <input type="text" placeholder="Project Type" />
+    <div id="newProject">
+        <h1>Add Project</h1>
+
+        <div class="div1">
+            <h2>Name</h2>
+            <input name="project-name" type="text" placeholder="Project Name" v-model="projectName" />
+            <h2>Type</h2>
+            <input name="project-type" type="text" placeholder="Project Type" v-model="projectType" />
+        </div>
+
+        <button type="button" @click="addProject()">Add Project</button>
     </div>
-        <br><button type="button">Login with Facebook</button>
-</div>
 </template>
 
 <script>
+// const axios = require("axios");
+import Data from "../helper/Data";
+
 export default {
-name: 'newProject'
+    name: 'NewProject',
+    data() {
+        return {
+            projectName: "",
+            projectType: "",
+        }
+    },
+    methods: {
+        addProject() {
+            Data.addProject({
+                name: this.projectName,
+                type: this.projectType
+            });
+            var projects = Data.getAllProjects();
+            this.closeView(projects.length - 1);
+        },
+        closeView(projectId) {
+            this.$router.push({ name: "Project", params: { id: projectId } });
+        },
+    },
 }
 </script>
 
