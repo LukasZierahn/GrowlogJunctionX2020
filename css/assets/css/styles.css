@@ -11,7 +11,8 @@
   padding: .5rem 1rem;
   background-color: #aaa;
   top: 0;
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 footer {
