@@ -1,13 +1,26 @@
-setInterval(() => {
+/**
+ * Records the data onto the page.
+ */
+function recordData(content) {
+    $("#smart").html(content);
+}
+
+function updateApiData() {
     console.log("Sending request...");
 
     $.get({
         url: "http://wateriot.co.uk/data.php",
-        success: () => {
-            console.log(result);
+        success: data => {
+            console.log(data);
+            recordData(data);
         },
-        error: () => {
-            console.error("Nooo!");
+        error: data => {
+            console.log(data);
+            recordData(data.statusText);
         }
     });
-}, 1000);
+}
+
+// setInterval(() => {
+//     updateApiData();
+// }, 1000);
