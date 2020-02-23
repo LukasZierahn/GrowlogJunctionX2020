@@ -15,6 +15,10 @@ Vue.use(Vuetify)
 
 Vue.config.productionTip = false
 
+import axios from 'axios'
+
+Vue.prototype.$http = axios
+
 new Vue({
   render: h => h(App),
   router,
