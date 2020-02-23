@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 import HelloWorld from '@/components/HelloWorld'
 import Home from '@/components/Home'
+import PlantList from '@/components/PlantList'
 import About from '@/components/About'
 import Contact from '@/components/Contact'
 import Plant from "@/components/Plant"
@@ -15,6 +16,11 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld
+    },
+    {
+      path: '/plantList',
+      name: 'PlantList',
+      component: PlantList
     },
     {
       path: '/home',

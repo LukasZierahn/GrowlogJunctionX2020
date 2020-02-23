@@ -1,52 +1,53 @@
 <template>
   <div id="home">
-    <h1>Plants</h1>
+    <h1>Your Projects</h1>
     <div class="d-flex flex-column">
-      <router-link v-for="item in plants" :key="item.id" :to="{ name: 'Plant', params: {plant: item } }">
-        <div class="d-flex flex-row" style="height : 50px;">
-          <div class="flowRowText">{{ item.name }}</div>
-          <div class="flowRowImage"> <img :src="item.picture" height="50px" width="50px"></div>
+      <div v-for="item in projects" :key="item.id">
+        <div class="d-flex flex-row">
+          <div>
+            {{ item.name }}
+            <PlantList :project="item"></PlantList>
+          </div>
         </div>
-        <md-progress-bar class="md-accent" md-mode="determinate" :md-value="item.progress * 100" :height="20"/>
-      </router-link>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import Plant from "./../helper/Plant";
+import Project from "./../helper/Project";
+import PlantList from "./PlantList";
 
 export default {
   name: 'Home', //this is the name of the component
 
   components: {
+    PlantList
   },
 
   data () {
     return {
-      plants: []
+      projects: []
     }
   },
 
   mounted() {
-    if (localStorage.plants !== undefined) {
-      for (let plant of localStorage.plants.split(";")) {
-        if (plant != "") {
-          this.plants.push(new Plant(plant));
+    if (localStorage.projects !== undefined) {
+      for (let project of localStorage.projects.split("*")) {
+        if (project != "") {
+          this.projects.push(new Project(project));
         }
       }
     } else {
-      this.plants.push(new Plant(0, "Tomato"))
-      this.plants.push(new Plant(1, "Tomato"))
-      this.plants.push(new Plant(2, "Tomato"))
-      this.plants.push(new Plant(3, "Tomato"))
+      this.projects.push(new Project(0, "Shed"))
+      this.projects.push(new Project(1, "TomatoFarm"))
 
       let output = ""
-      for (let plant of this.plants) {
-        output += plant.toSafeString();
+      for (let project of this.projects) {
+        output += project.toSafeString();
       }
 
-      localStorage.plants = output;
+      localStorage.projects = output;
     }
   },
 
