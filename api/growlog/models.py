@@ -1,10 +1,8 @@
 from django.db import models
-
-class User(models.Model):
-    username = models.CharField(max_length=128)
-    password = models.CharField(max_length=128)
+from django.contrib.auth.models import User
 
 class Project(models.Model):
+    user = models.ForeignKey("User", on_delete=models.CASCADE)
     title = models.CharField(max_length=128)
     project_pack = models.CharField(max_length=400)
     smart = models.BooleanField()
