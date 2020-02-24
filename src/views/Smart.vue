@@ -18,7 +18,7 @@ export default {
     mounted() {
         setInterval(() => {
             axios
-                .get("http://192.168.88.114/api/smartread/")
+                .get("http://localhost/api/smartread/")
                 .then(result => {
                     console.log(result);
                     this.temperature = result.data["temp"];
